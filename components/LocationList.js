@@ -2,13 +2,16 @@ import { useState } from 'react';
 
 const LocationList = () => {
   const initialData = [
-    { id: '1', name: 'Scotland Island', location: 'Sydney, Australia', image: 'https://via.placeholder.com/150' },
-    { id: '2', name: 'The Charles Grand Brasserie & Bar', location: 'Lorem ipsum, Dolor', image: 'https://via.placeholder.com/150' },
-    { id: '3', name: 'Bridge Climb', location: 'Dalor, Sit amet', image: 'https://via.placeholder.com/150' },
-    { id: '4', name: 'Bondi Beach', location: 'Sydney, Australia', image: 'https://via.placeholder.com/150' },
-    { id: '5', name: 'Clam Bar', location: 'Etcetera veni, Vidi vici', image: 'https://via.placeholder.com/150' },
-    { id: '6', name: 'Vivid Festival', location: 'Sydney, Australia', image: 'https://via.placeholder.com/150' }
+    { id: '1', name: 'Scotland Island', location: 'Sydney, Australia', image: 'https://i.ibb.co/0f2F0qY/d-Top-Image-container-6.png' },
+    { id: '2', name: 'The Charles Grand Brasserie & Bar', location: 'Lorem ipsum, Dolor', image: 'https://i.ibb.co/QbvqvXZ/d-Top-Image-container-5.png' },
+    { id: '3', name: 'Bridge Climb', location: 'Dalor, Sit amet', image: 'https://i.ibb.co/gPWXg4n/d-Top-Image-container-3.png' },
+    { id: '4', name: 'Vivid Festival', location: 'Sydney, Australia', image: 'https://i.ibb.co/SQtcCBX/d-Top-Image-container-1.png' },
+    { id: '5', name: 'Clam Bar', location: 'Etcetera veni, Vidi vici', image: 'https://i.ibb.co/28h0B36/d-Top-Image-container.png' }
   ];
+
+  
+
+
 
   const [locations, setLocations] = useState(initialData);
 
@@ -28,7 +31,6 @@ const LocationList = () => {
 
   return (
     <div>
-      <h2 className="text-xl font-bold mb-4">Locations</h2>
       <ul>
         {locations.map((location) => (
           <li
@@ -37,12 +39,12 @@ const LocationList = () => {
             onDragStart={(e) => handleDragStart(e, location.id)}
             onDragOver={(e) => e.preventDefault()}
             onDrop={(e) => handleDrop(e, location.id)}
-            className="bg-gray-200 p-2 mb-2 flex items-center"
+            className="bg-white p-2 mb-2 flex items-center"
           >
-            <img src={location.image} alt={location.name} className="mr-2 w-16 h-16 rounded-full" />
+            <img src={location.image} alt={location.name} className="mr-4 w-16 h-16 rounded-md" />
             <div>
-              <h3 className="font-semibold">{location.name}</h3>
-              <p className="text-gray-600">{location.location}</p>
+              <h3 className="text-[19px] leading-6 font-medium">{location.name}</h3>
+              <p className="font-normal text-[17px] leading-[22px] text-[#aba9ae]">{location.location}</p>
             </div>
           </li>
         ))}
